@@ -5,8 +5,8 @@ import {
 } from 'shared/hook-form/controls/token-select-hook-form';
 
 const OPTIONS: TokenOption[] = [
-  { token: TOKENS.STETH },
-  { token: TOKENS.WSTETH },
+  { token: TOKENS.STBTC },
+  { token: TOKENS.WSTBTC },
 ];
 
 export const TokenSelectRequest = () => {

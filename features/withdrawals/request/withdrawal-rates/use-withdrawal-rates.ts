@@ -61,7 +61,7 @@ export const useWithdrawalRates = ({
     (_, amount, token) =>
       getWithdrawalRates({
         amount: BigNumber.from(amount),
-        token: token as TOKENS.STETH | TOKENS.WSTETH,
+        token: token as TOKENS.STBTC | TOKENS.WSTBTC,
         dexes: ENABLED_WITHDRAWAL_DEXES,
       }),
     {

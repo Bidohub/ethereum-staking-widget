@@ -10,7 +10,7 @@ export const TokenAmountInputUnwrap = () => {
   return (
     <TokenAmountInputHookForm
       fieldName="amount"
-      token={TOKENS.WSTETH}
+      token={TOKENS.WSTBTC}
       data-testid="unwrapInput"
       maxValue={maxAmount}
       leftDecorator={<Wsteth />}

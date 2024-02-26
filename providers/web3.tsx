@@ -10,6 +10,27 @@ import { getStaticRpcBatchProvider } from '@lido-sdk/providers';
 import { useClientConfig } from 'providers/client-config';
 import { dynamics, useGetRpcUrlByChainId } from 'config';
 
+const BEVM_CHAIN_INFOS = {
+  bevmTestnet: {
+    id: 11503,
+    name: 'BEVM Testnet',
+    network: 'BEVM Testnet',
+    nativeCurrency: {
+      decimals: 18,
+      name: 'BTC',
+      symbol: 'BTC',
+    },
+    rpcUrls: {
+      default: { http: ['https://testnet.bevm.io/rpc'] },
+      public: { http: ['https://testnet.bevm.io/rpc'] },
+    },
+    blockExplorers: {
+      default: { name: 'base', url: 'https://scan-testnet.bevm.io' },
+    },
+    testnet: true,
+  },
+};
+
 const Web3Provider: FC<PropsWithChildren> = ({ children }) => {
   const { defaultChain, supportedChainIds, walletconnectProjectId } =
     useClientConfig();
@@ -23,13 +44,17 @@ const Web3Provider: FC<PropsWithChildren> = ({ children }) => {
         {
           // Required by reef-knot
           [CHAINS.Mainnet]: getRpcUrlByChainId(CHAINS.Mainnet),
+          [CHAINS.BEVM_TESTNET]: getRpcUrlByChainId(CHAINS.BEVM_TESTNET),
         },
       ),
     [supportedChainIds, getRpcUrlByChainId],
   );
 
   const client = useMemo(() => {
-    const wagmiChainsArray = Object.values({ ...wagmiChains, holesky });
+    const wagmiChainsArray = Object.values({
+      ...wagmiChains,
+      ...BEVM_CHAIN_INFOS,
+    });
     const supportedChains = wagmiChainsArray.filter((chain) =>
       dynamics.supportedChains.includes(chain.id),
     );
@@ -39,7 +64,7 @@ const Web3Provider: FC<PropsWithChildren> = ({ children }) => {
     // when there are only one supported network, so we need at least 2 of them.
     // Mumbai should be the last in the array, otherwise wagmi can send request to it.
     // TODO: remove after updating wagmi to v1+
-    supportedChains.push(wagmiChains.polygonMumbai);
+    // supportedChains.push(wagmiChains.polygonMumbai);
 
     const defaultChain =
       wagmiChainsArray.find((chain) => chain.id === dynamics.defaultChain) ||

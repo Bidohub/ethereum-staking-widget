@@ -34,7 +34,7 @@ export const useUnwrapFormProcessor = ({
         dispatchModalState({
           type: 'start',
           operation: TX_OPERATION.CONTRACT,
-          token: TOKENS.WSTETH,
+          token: TOKENS.WSTBTC,
           amount,
         });
 

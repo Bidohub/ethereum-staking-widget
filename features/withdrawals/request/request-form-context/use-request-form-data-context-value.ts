@@ -1,9 +1,9 @@
 import {
-  useSTETHContractRPC,
   useWSTETHContractRPC,
   useSTETHBalance,
   useWSTETHBalance,
   useContractSWR,
+  useSTETHContractRPC,
 } from '@lido-sdk/react';
 import { useClaimData } from 'features/withdrawals/contexts/claim-data-context';
 import { useWithdrawals } from 'features/withdrawals/contexts/withdrawals-context';
@@ -32,14 +32,14 @@ export const useRequestFormDataContextValue = () => {
 
   const maxAmountPerRequestWSteth = useContractSWR({
     contract: wstethContract,
-    method: 'getWstETHByStETH',
+    method: 'getWstBTCByStBTC',
     params: [maxAmountPerRequestSteth],
     shouldFetch: !!maxAmountPerRequestSteth,
     config: STRATEGY_LAZY,
   }).data;
   const minUnstakeWSteth = useContractSWR({
     contract: wstethContract,
-    method: 'getWstETHByStETH',
+    method: 'getWstBTCByStBTC',
     params: [minUnstakeSteth],
     shouldFetch: !!minUnstakeSteth,
     config: STRATEGY_LAZY,

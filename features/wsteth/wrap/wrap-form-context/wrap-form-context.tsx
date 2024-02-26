@@ -50,7 +50,7 @@ export const WrapFormProvider: FC<PropsWithChildren> = ({ children }) => {
   const formObject = useForm<WrapFormInputType, WrapFormValidationContext>({
     defaultValues: {
       amount: null,
-      token: TOKENS_TO_WRAP.STETH,
+      token: TOKENS_TO_WRAP.BTC,
     },
     context: validationContextPromise,
     criteriaMode: 'firstError',
@@ -67,7 +67,7 @@ export const WrapFormProvider: FC<PropsWithChildren> = ({ children }) => {
     onConfirm: networkData.revalidateWrapFormData,
   });
 
-  const isSteth = token === TOKENS_TO_WRAP.STETH;
+  const isSteth = token === TOKENS_TO_WRAP.STBTC;
 
   const amountDebounced = useDebouncedValue(amount, 500);
 

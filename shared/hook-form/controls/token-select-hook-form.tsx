@@ -14,9 +14,9 @@ import { isValidationErrorTypeValidate } from 'shared/hook-form/validation/valid
 import { TOKENS as TOKENS_SDK } from '@lido-sdk/constants';
 
 export const TOKENS = {
-  ETH: 'ETH',
-  [TOKENS_SDK.STETH]: TOKENS_SDK.STETH,
-  [TOKENS_SDK.WSTETH]: TOKENS_SDK.WSTETH,
+  BTC: 'BTC',
+  [TOKENS_SDK.STBTC]: TOKENS_SDK.STBTC,
+  [TOKENS_SDK.WSTBTC]: TOKENS_SDK.WSTBTC,
 } as const;
 export type TOKENS = keyof typeof TOKENS;
 
@@ -26,9 +26,9 @@ export type TokenOption = {
 };
 
 const iconsMap = {
-  [TOKENS.ETH]: <Eth />,
-  [TOKENS.STETH]: <Steth />,
-  [TOKENS.WSTETH]: <Wsteth />,
+  [TOKENS.BTC]: <Eth />,
+  [TOKENS.STBTC]: <Steth />,
+  [TOKENS.WSTBTC]: <Wsteth />,
 } as const;
 
 type TokenSelectHookFormProps = {

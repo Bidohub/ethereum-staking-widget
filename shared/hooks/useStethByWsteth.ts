@@ -7,7 +7,7 @@ export const useStethByWsteth = (
 ): BigNumber | undefined => {
   return useContractSWR({
     contract: useWSTETHContractRPC(),
-    method: 'getStETHByWstETH',
+    method: 'getStBTCByWstBTC',
     params: [wsteth],
     shouldFetch: !!wsteth,
     config: STRATEGY_LAZY,

@@ -58,13 +58,15 @@ export const useClaim = () => {
               ids,
               hints,
               {
-                maxFeePerGas,
-                maxPriorityFeePerGas,
+                //todo
+                // maxFeePerGas,
+                // maxPriorityFeePerGas,
               },
             );
             return contractWeb3.claimWithdrawals(ids, hints, {
-              maxFeePerGas,
-              maxPriorityFeePerGas,
+              // todo
+              // maxFeePerGas,
+              // maxPriorityFeePerGas,
               gasLimit,
             });
           }

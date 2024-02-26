@@ -4,7 +4,7 @@ import { constants } from 'ethers';
 
 import { Box, Link } from '@lidofinance/lido-ui';
 import { useSDK, useTokenBalance } from '@lido-sdk/react';
-import { TOKENS, getTokenAddress } from '@lido-sdk/constants';
+import { getTokenAddress, TOKENS } from '@lido-sdk/constants';
 
 import { dynamics } from 'config';
 import { stEthEthRequest } from 'features/rewards/fetchers/requesters';
@@ -28,7 +28,7 @@ export const Stats: FC<StatsProps> = (props) => {
   const { chainId } = useSDK();
 
   const steth = useTokenBalance(
-    getTokenAddress(chainId, TOKENS.STETH),
+    getTokenAddress(chainId, TOKENS.STBTC),
     address,
     STRATEGY_LAZY,
   );

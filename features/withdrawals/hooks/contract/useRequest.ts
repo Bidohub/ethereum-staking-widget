@@ -64,13 +64,15 @@ const useWithdrawalRequestMethods = () => {
         await getFeeData(staticRpcProvider);
       const gasLimit =
         await contractWeb3.estimateGas.requestWithdrawalsWithPermit(...params, {
-          maxFeePerGas,
-          maxPriorityFeePerGas,
+          // todo
+          // maxFeePerGas,
+          // maxPriorityFeePerGas,
         });
 
       const txOptions = {
-        maxFeePerGas,
-        maxPriorityFeePerGas,
+        // todo
+        // maxFeePerGas,
+        // maxPriorityFeePerGas,
         gasLimit,
       };
 
@@ -122,14 +124,16 @@ const useWithdrawalRequestMethods = () => {
         await contractWeb3.estimateGas.requestWithdrawalsWstETHWithPermit(
           ...params,
           {
-            maxFeePerGas,
-            maxPriorityFeePerGas,
+            // todo
+            // maxFeePerGas,
+            // maxPriorityFeePerGas,
           },
         );
 
       const txOptions = {
-        maxFeePerGas,
-        maxPriorityFeePerGas,
+        // todo
+        // maxFeePerGas,
+        // maxPriorityFeePerGas,
         gasLimit,
       };
 
@@ -175,13 +179,15 @@ const useWithdrawalRequestMethods = () => {
           const gasLimit = await contractWeb3.estimateGas.requestWithdrawals(
             ...params,
             {
-              maxFeePerGas,
-              maxPriorityFeePerGas,
+              // todo
+              // maxFeePerGas,
+              // maxPriorityFeePerGas,
             },
           );
           return contractWeb3.requestWithdrawals(...params, {
-            maxFeePerGas,
-            maxPriorityFeePerGas,
+            // todo
+            // maxFeePerGas,
+            // maxPriorityFeePerGas,
             gasLimit,
           });
         }
@@ -234,12 +240,14 @@ const useWithdrawalRequestMethods = () => {
             await getFeeData(staticRpcProvider);
           const gasLimit =
             await contractWeb3.estimateGas.requestWithdrawalsWstETH(...params, {
-              maxFeePerGas,
-              maxPriorityFeePerGas,
+              // todo
+              // maxFeePerGas,
+              // maxPriorityFeePerGas,
             });
           return contractWeb3.requestWithdrawalsWstETH(...params, {
-            maxFeePerGas,
-            maxPriorityFeePerGas,
+            // todo
+            // maxFeePerGas,
+            // maxPriorityFeePerGas,
             gasLimit,
           });
         }
@@ -270,8 +278,8 @@ const useWithdrawalRequestMethods = () => {
   );
 
   return useCallback(
-    (isAllowance: boolean, token: TOKENS.STETH | TOKENS.WSTETH) => {
-      return token == TOKENS.STETH
+    (isAllowance: boolean, token: TOKENS.STBTC | TOKENS.WSTBTC) => {
+      return token == TOKENS.STBTC
         ? isAllowance
           ? steth
           : permitSteth
@@ -288,7 +296,7 @@ const useWithdrawalRequestMethods = () => {
 
 type useWithdrawalRequestParams = {
   amount: BigNumber | null;
-  token: TOKENS.STETH | TOKENS.WSTETH;
+  token: TOKENS.STBTC | TOKENS.WSTBTC;
   onConfirm?: () => Promise<void>;
 };
 
@@ -309,7 +317,7 @@ export const useWithdrawalRequest = ({
 
   const wstethContract = useWSTETHContractRPC();
   const stethContract = useSTETHContractRPC();
-  const tokenContract = token === TOKENS.STETH ? stethContract : wstethContract;
+  const tokenContract = token === TOKENS.STBTC ? stethContract : wstethContract;
 
   const valueBN = amount ?? Zero;
 

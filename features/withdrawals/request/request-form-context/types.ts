@@ -9,7 +9,7 @@ export type ValidationResults = {
 
 export type RequestFormInputType = {
   amount: null | BigNumber;
-  token: TOKENS.STETH | TOKENS.WSTETH;
+  token: TOKENS.STBTC | TOKENS.WSTBTC;
   mode: 'lido' | 'dex';
 } & ValidationResults;
 

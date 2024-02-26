@@ -23,8 +23,8 @@ const WalletComponent: WalletComponentType = (props) => {
   const stethBalance = useSTETHBalance(STRATEGY_LAZY);
   const wstethBalance = useWSTETHBalance(STRATEGY_LAZY);
 
-  const stethAddress = useTokenAddress(TOKENS.STETH);
-  const wstethAddress = useTokenAddress(TOKENS.WSTETH);
+  const stethAddress = useTokenAddress(TOKENS.STBTC);
+  const wstethAddress = useTokenAddress(TOKENS.WSTBTC);
 
   const wstethByStethBalance = useWstethBySteth(stethBalance.data);
   const stethByWstethBalance = useStethByWsteth(wstethBalance.data);

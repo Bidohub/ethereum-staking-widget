@@ -18,8 +18,8 @@ export const useWrapTxApprove = ({ amount, token }: UseWrapTxApproveArgs) => {
 
   const [stethTokenAddress, wstethTokenAddress] = useMemo(
     () => [
-      getTokenAddress(chainId, TOKENS.STETH),
-      getTokenAddress(chainId, TOKENS.WSTETH),
+      getTokenAddress(chainId, TOKENS.STBTC),
+      getTokenAddress(chainId, TOKENS.WSTBTC),
     ],
     [chainId],
   );
@@ -37,7 +37,7 @@ export const useWrapTxApprove = ({ amount, token }: UseWrapTxApproveArgs) => {
   );
 
   const isApprovalNeededBeforeWrap =
-    active && needsApprove && token === TOKENS_TO_WRAP.STETH;
+    active && needsApprove && token === TOKENS_TO_WRAP.STBTC;
 
   return useMemo(
     () => ({

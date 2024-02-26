@@ -57,11 +57,11 @@ describe('validateBignumberMin', () => {
 
 describe('validateEtherAmount', () => {
   it('should work', () => {
-    validateEtherAmount(field, bn(12), TOKENS.STETH);
+    validateEtherAmount(field, bn(12), TOKENS.STBTC);
   });
 
   it('should throw right error on null amount', () => {
-    const fn = () => validateEtherAmount(field, null, TOKENS.STETH);
+    const fn = () => validateEtherAmount(field, null, TOKENS.STBTC);
     expect(fn).toThrowError();
     try {
       fn();
@@ -74,7 +74,7 @@ describe('validateEtherAmount', () => {
   });
 
   it('should throw right error on zero ', () => {
-    const fn = () => validateEtherAmount(field, bn(0), TOKENS.STETH);
+    const fn = () => validateEtherAmount(field, bn(0), TOKENS.STBTC);
     expect(fn).toThrowError();
     try {
       fn();
@@ -88,7 +88,7 @@ describe('validateEtherAmount', () => {
 
   it('should throw right error on more than ethereum max uint', () => {
     const fn = () =>
-      validateEtherAmount(field, MaxUint256.add(1), TOKENS.STETH);
+      validateEtherAmount(field, MaxUint256.add(1), TOKENS.STBTC);
     expect(fn).toThrowError();
     try {
       fn();

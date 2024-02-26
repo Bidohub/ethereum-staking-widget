@@ -14,12 +14,12 @@ import { useEthUsd } from 'shared/hooks/use-eth-usd';
 export const StakeFormInfo = () => {
   const { gasCost } = useStakeFormData();
   const amount = useWatch<StakeFormInput, 'amount'>({ name: 'amount' });
-  const contractRpc = useSTETHContractRPC();
-  const lidoFee = useContractSWR({
-    contract: contractRpc,
-    method: 'getFee',
-    config: STRATEGY_CONSTANT,
-  });
+  // const contractRpc = useSTETHContractRPC();
+  // const lidoFee = useContractSWR({
+  //   contract: contractRpc,
+  //   method: 'getFee',
+  //   config: STRATEGY_CONSTANT,
+  // });
   const txCostInUsd = useEthUsd(gasCost);
 
   return (
@@ -33,7 +33,7 @@ export const StakeFormInfo = () => {
         />
       </DataTableRow>
       <DataTableRow title="Exchange rate" data-testid="exchangeRate">
-        1 ETH = 1 stETH
+        1 BTC = 1 stBTC
       </DataTableRow>
       <DataTableRow
         title="Max transaction cost"
@@ -42,15 +42,15 @@ export const StakeFormInfo = () => {
       >
         <FormatPrice amount={txCostInUsd} />
       </DataTableRow>
-      <DataTableRow
-        title="Reward fee"
-        data-testid="lidoFee"
-        loading={lidoFee.initialLoading}
-        help="Please note: this fee applies to staking rewards only,
-      and is NOT taken from your staked amount."
-      >
-        {!lidoFee.data ? DATA_UNAVAILABLE : `${lidoFee.data / 100}%`}
-      </DataTableRow>
+      {/*<DataTableRow*/}
+      {/*  title="Reward fee"*/}
+      {/*  data-testid="lidoFee"*/}
+      {/*  loading={lidoFee.initialLoading}*/}
+      {/*  help="Please note: this fee applies to staking rewards only,*/}
+      {/*and is NOT taken from your staked amount."*/}
+      {/*>*/}
+      {/*  {!lidoFee.data ? DATA_UNAVAILABLE : `${lidoFee.data / 100}%`}*/}
+      {/*</DataTableRow>*/}
     </DataTable>
   );
 };

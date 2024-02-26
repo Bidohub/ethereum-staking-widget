@@ -5,12 +5,12 @@ import { TokenSelectHookForm } from 'shared/hook-form/controls/token-select-hook
 
 const OPTIONS = [
   {
-    label: 'Lido (stETH)',
-    token: TOKENS_TO_WRAP.STETH,
+    label: 'Lido (stBTC)',
+    token: TOKENS_TO_WRAP.STBTC,
   },
   {
-    label: 'Ethereum (ETH)',
-    token: TOKENS_TO_WRAP.ETH,
+    label: 'Ethereum (BTC)',
+    token: TOKENS_TO_WRAP.BTC,
   },
 ];
 
@@ -20,7 +20,7 @@ export const TokenSelectWrap = () => {
       options={OPTIONS}
       onChange={(value) => {
         trackEvent(
-          ...(value === TOKENS_TO_WRAP.ETH
+          ...(value === TOKENS_TO_WRAP.BTC
             ? MATOMO_CLICK_EVENTS.wrapTokenSelectEth
             : MATOMO_CLICK_EVENTS.wrapTokenSelectSteth),
         );

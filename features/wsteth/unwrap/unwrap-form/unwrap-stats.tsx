@@ -26,7 +26,7 @@ export const UnwrapStats = () => {
         <FormatToken
           data-testid="youWillReceive"
           amount={willReceiveStETH}
-          symbol="stETH"
+          symbol="stBTC"
           showAmountTip
           trimEllipsis
         />

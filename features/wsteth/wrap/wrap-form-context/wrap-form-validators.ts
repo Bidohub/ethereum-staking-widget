@@ -26,36 +26,36 @@ export const WrapFormValidationResolver: Resolver<
   const { amount, token } = values;
   try {
     invariant(validationContext, 'validation context must be present');
-    const { isWalletActive, asyncContext } = validationContext;
+    // const { isWalletActive, asyncContext } = validationContext;
 
     validateEtherAmount('amount', amount, token);
 
-    const awaitedContext = await awaitWithTimeout(
-      asyncContext,
-      VALIDATION_CONTEXT_TIMEOUT,
-    );
+    // const awaitedContext = await awaitWithTimeout(
+    //   asyncContext,
+    //   VALIDATION_CONTEXT_TIMEOUT,
+    // );
 
-    if (token === TOKENS_TO_WRAP.ETH) {
-      // checks active internally after other wallet-less check
-      validateStakeEth({
-        formField: 'amount',
-        isWalletActive,
-        amount,
-        ...awaitedContext,
-      });
-    } else if (isWalletActive) {
-      validateBignumberMax(
-        'amount',
-        amount,
-        awaitedContext.stethBalance,
-        messageMaxAmount(awaitedContext.stethBalance, token),
-      );
-    } else {
-      return {
-        values,
-        errors: { token: 'wallet is not connected' },
-      };
-    }
+    // if (token === TOKENS_TO_WRAP.BTC) {
+    //   // checks active internally after other wallet-less check
+    //   validateStakeEth({
+    //     formField: 'amount',
+    //     isWalletActive,
+    //     amount,
+    //     ...awaitedContext,
+    //   });
+    // } else if (isWalletActive) {
+    //   validateBignumberMax(
+    //     'amount',
+    //     amount,
+    //     awaitedContext.stethBalance,
+    //     messageMaxAmount(awaitedContext.stethBalance, token),
+    //   );
+    // } else {
+    //   return {
+    //     values,
+    //     errors: { token: 'wallet is not connected' },
+    //   };
+    // }
 
     return {
       values,

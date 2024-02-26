@@ -34,7 +34,7 @@ export const useLidoStats = (): {
   const data = useMemo(() => {
     return {
       totalStaked: lidoStats?.data?.totalStaked
-        ? `${Number(lidoStats.data.totalStaked).toLocaleString('en-US')} ETH`
+        ? `${Number(lidoStats.data.totalStaked).toLocaleString('en-US')} BTC`
         : DATA_UNAVAILABLE,
       stakers: lidoStats?.data?.uniqueAnytimeHolders
         ? String(lidoStats.data.uniqueAnytimeHolders)

@@ -24,7 +24,7 @@ export const checkRpcUrl = async (rpcUrl: string, chainId: CHAINS) => {
     }
 
     // Doing a request to check rpc url is fetchable
-    const stethAddress = getTokenAddress(chainId, TOKENS.STETH);
+    const stethAddress = getTokenAddress(chainId, TOKENS.STBTC);
     const stethContract = StethAbiFactory.connect(stethAddress, rpcProvider);
     await stethContract.name();
 

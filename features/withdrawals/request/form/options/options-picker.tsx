@@ -39,7 +39,7 @@ const LidoButton: React.FC<OptionButtonProps> = ({ isActive, onClick }) => {
   const [amount, token] = useWatch<RequestFormInputType, ['amount', 'token']>({
     name: ['amount', 'token'],
   });
-  const isSteth = token === TOKENS.STETH;
+  const isSteth = token === TOKENS.STBTC;
   const { value: waitingTime, initialLoading } = useWaitingTime(
     amount ? formatEther(amount) : '',
     {

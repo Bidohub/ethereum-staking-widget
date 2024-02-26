@@ -9,7 +9,7 @@ export const MAX_SHOWN_REQUEST_PER_TYPE = 1024;
 
 // time that validation function waits for context data to resolve
 // should be enough to load token balances/tvl/max&min amounts and other contract data
-export const VALIDATION_CONTEXT_TIMEOUT = 4000;
+export const VALIDATION_CONTEXT_TIMEOUT = 5000;
 
 export const ENABLED_WITHDRAWAL_DEXES: DexWithdrawalApi[] = [
   'one-inch',

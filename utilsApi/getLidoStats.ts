@@ -2,7 +2,7 @@ import { ETHPLORER_TOKEN_ENDPOINT } from 'config';
 import getConfig from 'next/config';
 import { standardFetcher } from 'utils/standardFetcher';
 import { responseTimeExternalMetricWrapper } from 'utilsApi';
-import { TOKENS, getTokenAddress, CHAINS } from '@lido-sdk/constants';
+import { TOKENS, CHAINS, getTokenAddress } from '@lido-sdk/constants';
 
 const { serverRuntimeConfig } = getConfig();
 const { ethplorerApiKey } = serverRuntimeConfig;
@@ -15,7 +15,7 @@ export const getLidoStats: GetLidoStats = async () => {
   // IMPORTANT: ETHPLORER_TOKEN_ENDPOINT (api.ethplorer.io) works only with Mainnet chain!
   const api = `${ETHPLORER_TOKEN_ENDPOINT}${getTokenAddress(
     CHAINS.Mainnet,
-    TOKENS.STETH,
+    TOKENS.STBTC,
   )}`;
   const query = new URLSearchParams({ apiKey: ethplorerApiKey });
   const url = `${api}?${query.toString()}`;

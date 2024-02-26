@@ -16,4 +16,4 @@ export enum TX_OPERATION {
   NONE,
 }
 
-export type TX_TOKENS = 'ETH' | TOKENS.STETH | TOKENS.WSTETH;
+export type TX_TOKENS = 'ETH' | TOKENS.STBTC | TOKENS.WSTBTC;

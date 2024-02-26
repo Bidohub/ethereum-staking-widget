@@ -23,7 +23,7 @@ export const WrapFormStats = () => {
   const { watch } = useFormContext<WrapFormInputType>();
   const [token] = watch(['token']);
 
-  const isSteth = token === TOKENS_TO_WRAP.STETH;
+  const isSteth = token === TOKENS_TO_WRAP.STBTC;
 
   const oneWstethConverted = useWstethBySteth(oneSteth);
 
@@ -53,11 +53,11 @@ export const WrapFormStats = () => {
         data-testid="exchangeRate"
         loading={!oneWstethConverted}
       >
-        1 {isSteth ? 'stETH' : 'ETH'} ={' '}
+        1 {isSteth ? 'stBTC' : 'BTC'} ={' '}
         <FormatToken
           data-testid="rate"
           amount={oneWstethConverted}
-          symbol="wstETH"
+          symbol="wstBTC"
         />
       </DataTableRow>
       <AllowanceDataTableRow
@@ -65,14 +65,14 @@ export const WrapFormStats = () => {
         allowance={allowance}
         isBlank={!(isSteth && active)}
         loading={isApprovalLoading}
-        token={TOKENS.STETH}
+        token={TOKENS.STBTC}
       />
 
       <DataTableRow title="You will receive" loading={!willReceiveWsteth}>
         <FormatToken
           amount={willReceiveWsteth}
           data-testid="youWillReceive"
-          symbol="wstETH"
+          symbol="wstBTC"
           showAmountTip
           trimEllipsis
         />

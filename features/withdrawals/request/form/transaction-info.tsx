@@ -58,7 +58,7 @@ export const TransactionInfo = () => {
         isBlank={!active}
         loading={isApprovalFlowLoading}
       />
-      {token === TOKENS.STETH ? (
+      {token === TOKENS.STBTC ? (
         <DataTableRow data-testid="exchangeRate" title="Exchange rate">
           1 stETH = 1 ETH
         </DataTableRow>

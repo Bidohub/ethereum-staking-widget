@@ -18,7 +18,7 @@ import { TOKENS } from '@lido-sdk/constants';
 export const WalletComponent = () => {
   const { account } = useSDK();
   const token = useWatch<RequestFormInputType, 'token'>({ name: 'token' });
-  const isSteth = token === TOKENS.STETH;
+  const isSteth = token === TOKENS.STBTC;
   return (
     <WalletWrapperStyled data-testid="requestCardSection">
       <CardRow>

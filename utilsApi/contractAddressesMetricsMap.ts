@@ -64,12 +64,12 @@ export const METRIC_CONTRACT_ADDRESSES = (
       [CONTRACT_NAMES.stETH]: getAddressOrNull(
         getTokenAddress,
         chainId,
-        TOKENS.STETH,
+        TOKENS.STBTC,
       ),
       [CONTRACT_NAMES.wstETH]: getAddressOrNull(
         getTokenAddress,
         chainId,
-        TOKENS.WSTETH,
+        TOKENS.WSTBTC,
       ),
       [CONTRACT_NAMES.WithdrawalQueue]: getAddressOrNull(
         getWithdrawalQueueAddress,

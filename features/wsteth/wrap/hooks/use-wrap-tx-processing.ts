@@ -16,8 +16,8 @@ export const getGasParameters = async (
 ) => {
   const { maxFeePerGas, maxPriorityFeePerGas } = await getFeeData(provider);
   return {
-    maxPriorityFeePerGas,
-    maxFeePerGas,
+    // maxPriorityFeePerGas,
+    // maxFeePerGas,
   };
 };
 
@@ -37,7 +37,8 @@ export const useWrapTxProcessing = () => {
       invariant(providerWeb3, 'providerWeb3 must be presented');
       invariant(wstethContractWeb3, 'wstethContractWeb3 must be presented');
 
-      if (token === TOKENS.STETH) {
+      console.log('tokentokentokentokentoken', token);
+      if (token === TOKENS.STBTC) {
         if (isMultisig) {
           const tx = await wstethContractWeb3.populateTransaction.wrap(amount);
           return providerWeb3.getSigner().sendUncheckedTransaction(tx);
@@ -48,7 +49,7 @@ export const useWrapTxProcessing = () => {
           );
         }
       } else {
-        const wstethTokenAddress = getTokenAddress(chainId, TOKENS.WSTETH);
+        const wstethTokenAddress = getTokenAddress(chainId, TOKENS.WSTBTC);
         if (isMultisig) {
           return providerWeb3.getSigner().sendUncheckedTransaction({
             to: wstethTokenAddress,

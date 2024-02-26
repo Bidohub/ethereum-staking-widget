@@ -3,9 +3,9 @@ import { isAddress } from 'ethers/lib/utils';
 import get from 'lodash/get';
 
 import { StaticJsonRpcBatchProvider } from '@lidofinance/eth-providers';
-import { CHAINS } from '@lido-sdk/constants';
 
 import STETH_ABI from 'abi/steth.abi.json';
+import { CHAINS } from 'utils';
 
 const CURVE_ABI = [
   {
@@ -28,43 +28,41 @@ const TOKENS = {
   CURVE: 'curve',
   LDO: 'LDO',
   LDO_REWARDS: 'LDO_Rewards',
+  STBTC: 'stBTC',
+  WSTBTC: 'wstBTC',
 } as const;
 export type TOKENS = (typeof TOKENS)[keyof typeof TOKENS];
 
 export const TOKENS_BY_CHAIN_ID = {
-  [CHAINS.Mainnet]: [TOKENS.STETH, TOKENS.WSTETH, TOKENS.CURVE],
-  [CHAINS.Rinkeby]: [TOKENS.STETH, TOKENS.WSTETH],
-  [CHAINS.Goerli]: [TOKENS.STETH, TOKENS.LDO_REWARDS, TOKENS.WSTETH],
+  [CHAINS.Mainnet]: [TOKENS.STBTC, TOKENS.WSTBTC, TOKENS.CURVE],
+  [CHAINS.Goerli]: [TOKENS.STBTC, TOKENS.LDO_REWARDS, TOKENS.WSTBTC],
+  [CHAINS.BEVM_TESTNET]: [TOKENS.STBTC, TOKENS.WSTBTC],
 } as const;
 
 export const TOKEN_ADDRESS_BY_CHAIN_ID = {
   [CHAINS.Mainnet]: {
-    [TOKENS.STETH]: '0xae7ab96520de3a18e5e111b5eaab095312d7fe84',
+    [TOKENS.STBTC]: '0xae7ab96520de3a18e5e111b5eaab095312d7fe84',
     [TOKENS.CURVE]: '0xDC24316b9AE028F1497c275EB9192a3Ea0f67022',
   },
-  [CHAINS.Ropsten]: {},
-  [CHAINS.Rinkeby]: {
-    [TOKENS.STETH]: '0xbA453033d328bFdd7799a4643611b616D80ddd97',
-  },
   [CHAINS.Goerli]: {
-    [TOKENS.STETH]: '0x1643e812ae58766192cf7d2cf9567df2c37e9b7f',
+    [TOKENS.STBTC]: '0x1643e812ae58766192cf7d2cf9567df2c37e9b7f',
   },
-  [CHAINS.Kovan]: {},
+  [CHAINS.BEVM_TESTNET]: {
+    [TOKENS.STBTC]: '0xE4D1ebF03742a8238b546980261507FdE0113D37',
+  },
 } as const;
 
 export const TOKEN_ABI_BY_CHAIN_ID = {
   [CHAINS.Mainnet]: {
-    [TOKENS.STETH]: STETH_ABI,
+    [TOKENS.STBTC]: STETH_ABI,
     [TOKENS.CURVE]: CURVE_ABI,
   },
-  [CHAINS.Ropsten]: {},
-  [CHAINS.Rinkeby]: {
-    [TOKENS.STETH]: STETH_ABI,
-  },
   [CHAINS.Goerli]: {
-    [TOKENS.STETH]: STETH_ABI,
+    [TOKENS.STBTC]: STETH_ABI,
   },
-  [CHAINS.Kovan]: {},
+  [1501]: {
+    [TOKENS.STBTC]: STETH_ABI,
+  },
 } as const;
 
 export const getTokenAddress = (
@@ -100,7 +98,7 @@ export const getTokenConfig = (chainId: CHAINS, tokenName: TOKENS) => ({
 });
 
 export const GAS_LIMITS_BY_TOKEN = {
-  [TOKENS.STETH]: {
+  [TOKENS.STBTC]: {
     submit: BigNumber.from(120000),
   },
 };

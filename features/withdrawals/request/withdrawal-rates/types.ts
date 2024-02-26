@@ -5,7 +5,7 @@ import { TokensWithdrawable } from 'features/withdrawals/types/tokens-withdrawab
 
 export type GetWithdrawalRateParams = {
   amount: BigNumber;
-  token: TOKENS.STETH | TOKENS.WSTETH;
+  token: TOKENS.STBTC | TOKENS.WSTBTC;
   dexes: DexWithdrawalApi[];
 };
 

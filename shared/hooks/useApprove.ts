@@ -77,8 +77,9 @@ export const useApprove = (
           const { maxFeePerGas, maxPriorityFeePerGas } =
             await getFeeData(staticRpcProvider);
           const tx = await contractWeb3.approve(spender, amount, {
-            maxFeePerGas,
-            maxPriorityFeePerGas,
+            //todo
+            // maxFeePerGas,
+            // maxPriorityFeePerGas,
           });
           return tx;
         }

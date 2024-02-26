@@ -26,7 +26,7 @@ export const RequestsInfo = () => {
 
   const requestCount = requests?.length ?? 0;
   const maxPerTx =
-    token === TOKENS.STETH
+    token === TOKENS.STBTC
       ? maxAmountPerRequestSteth
       : maxAmountPerRequestWSteth;
 

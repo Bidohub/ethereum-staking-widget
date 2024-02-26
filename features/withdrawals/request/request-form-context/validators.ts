@@ -123,7 +123,7 @@ const transformContext = (
   context: RequestFormValidationAsyncContextType,
   values: RequestFormInputType,
 ) => {
-  const isSteth = values.token === TOKENS.STETH;
+  const isSteth = values.token === TOKENS.STBTC;
   return {
     isSteth,
     balance: isSteth ? context.balanceSteth : context.balanceWSteth,

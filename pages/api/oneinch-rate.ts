@@ -6,7 +6,7 @@ import { BigNumber } from 'ethers';
 import invariant from 'tiny-invariant';
 
 import { wrapRequest as wrapNextRequest } from '@lidofinance/next-api-wrapper';
-import { CHAINS, TOKENS, getTokenAddress } from '@lido-sdk/constants';
+import { CHAINS, getTokenAddress, TOKENS } from '@lido-sdk/constants';
 
 import {
   CACHE_ONE_INCH_RATE_KEY,
@@ -39,7 +39,7 @@ const TOKEN_ETH = 'ETH';
 const MAX_BIGINT = BigNumber.from(
   '10000000000000000000000000000000000000000000000000000000000000000000',
 );
-const TOKEN_ALLOWED_LIST = [TOKEN_ETH, TOKENS.STETH, TOKENS.WSTETH];
+const TOKEN_ALLOWED_LIST = [TOKEN_ETH, TOKENS.STBTC, TOKENS.WSTBTC];
 const ETH_DUMMY_ADDRESS = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
 const PASSTHROUGH_CODES = [400, 422, 429];
 
@@ -104,7 +104,7 @@ const oneInchRate: API = async (req, res) => {
       : getTokenAddress(CHAINS.Mainnet, token as TOKENS);
   const toToken =
     token === TOKEN_ETH
-      ? getTokenAddress(CHAINS.Mainnet, TOKENS.STETH)
+      ? getTokenAddress(CHAINS.Mainnet, TOKENS.STBTC)
       : ETH_DUMMY_ADDRESS;
 
   try {

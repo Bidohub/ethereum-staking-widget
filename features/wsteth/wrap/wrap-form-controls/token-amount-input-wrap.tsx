@@ -7,6 +7,7 @@ import { useStakingLimitWarning } from 'shared/hooks/use-staking-limit-warning';
 export const TokenAmountInputWrap = () => {
   const token = useWatch<WrapFormInputType, 'token'>({ name: 'token' });
 
+  console.log('token', token);
   const { maxAmount, isApprovalNeededBeforeWrap, stakeLimitInfo } =
     useWrapFormData();
   const { limitWarning } = useStakingLimitWarning(

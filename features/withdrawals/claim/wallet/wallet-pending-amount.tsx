@@ -7,7 +7,7 @@ import { FormatToken } from 'shared/formatters';
 import { useClaimData } from 'features/withdrawals/contexts/claim-data-context';
 
 export const WalletPendingAmount = () => {
-  const stethAddress = useTokenAddress(TOKENS.STETH);
+  const stethAddress = useTokenAddress(TOKENS.STBTC);
   const { data, initialLoading } = useClaimData();
 
   const pendingAmount = (

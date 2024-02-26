@@ -72,7 +72,7 @@ export const RequestFormProvider: FC<PropsWithChildren> = ({ children }) => {
   >({
     defaultValues: {
       amount: null,
-      token: TOKENS.STETH,
+      token: TOKENS.STBTC,
       mode: 'lido',
       requests: null,
     },
@@ -121,7 +121,7 @@ export const RequestFormProvider: FC<PropsWithChildren> = ({ children }) => {
     dispatchModalState({ type: 'set_on_retry', callback: onSubmit });
   }, [dispatchModalState, onSubmit]);
 
-  const maxAmount = token === TOKENS.STETH ? balanceSteth : balanceWSteth;
+  const maxAmount = token === TOKENS.STBTC ? balanceSteth : balanceWSteth;
 
   const value = useMemo(
     (): RequestFormDataContextValueType => ({

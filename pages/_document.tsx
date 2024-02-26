@@ -62,7 +62,7 @@ export default class MyDocument extends Document {
   get metaDescription(): string {
     return (
       'Liquid staking with Lido. ' +
-      'Stake Ether with Lido to get daily rewards while keeping full control of your staked tokens. ' +
+      'Stake Ether with Lido to get daily rewards while keeping full control of your staked balance.ts. ' +
       'Start receiving rewards in just a few clicks.'
     );
   }

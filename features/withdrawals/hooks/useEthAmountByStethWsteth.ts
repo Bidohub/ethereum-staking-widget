@@ -15,7 +15,7 @@ export const useEthAmountByStethWsteth = ({
   const wsteth = isSteth ? null : amount;
   const { data: stethByWstethBalance, loading } = useContractSWR({
     contract: useWSTETHContractRPC(),
-    method: 'getStETHByWstETH',
+    method: 'getStBTCByWstBTC',
     params: [wsteth],
     shouldFetch: !!wsteth,
     config: STRATEGY_LAZY,

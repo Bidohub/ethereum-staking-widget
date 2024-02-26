@@ -1,4 +1,4 @@
-import { CHAINS, TOKENS, getTokenAddress } from '@lido-sdk/constants';
+import { CHAINS, getTokenAddress, TOKENS } from '@lido-sdk/constants';
 import { BigNumber } from 'ethers';
 import { standardFetcher } from './standardFetcher';
 import { formatEther } from '@ethersproject/units';
@@ -30,7 +30,7 @@ type OpenOceanGetQuotePartial = {
   };
 };
 
-type RateToken = TOKENS.STETH | TOKENS.WSTETH | 'ETH';
+type RateToken = TOKENS.STBTC | TOKENS.WSTBTC | 'ETH';
 
 type RateCalculationResult = { rate: number; toReceive: BigNumber };
 

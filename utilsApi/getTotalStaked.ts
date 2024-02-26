@@ -21,7 +21,7 @@ const getTotalStakedWithFallbacks = async (
   try {
     const staticProvider = getStaticRpcBatchProvider(chainId, urls[urlIndex]);
 
-    const stethAddress = getTokenAddress(chainId as number, TOKENS.STETH);
+    const stethAddress = getTokenAddress(chainId as number, TOKENS.STBTC);
     const stethContract = StethAbiFactory.connect(stethAddress, staticProvider);
 
     const totalSupplyStWei = await stethContract.totalSupply();

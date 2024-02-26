@@ -15,7 +15,7 @@ import type { UnwrapFormInputType, UnwrapFormValidationContext } from './types';
 
 const messageMaxAmount = (max: BigNumber) =>
   `Entered ${getTokenDisplayName(
-    TOKENS.WSTETH,
+    TOKENS.WSTBTC,
   )} amount exceeds your available balance of ${formatEther(max)}`;
 
 export const UnwrapFormValidationResolver: Resolver<
@@ -29,7 +29,7 @@ export const UnwrapFormValidationResolver: Resolver<
       'validation context must be presented as context promise',
     );
 
-    validateEtherAmount('amount', amount, TOKENS.WSTETH);
+    validateEtherAmount('amount', amount, TOKENS.WSTBTC);
 
     const { isWalletActive: active, maxAmount } = await awaitWithTimeout(
       validationContextPromise,

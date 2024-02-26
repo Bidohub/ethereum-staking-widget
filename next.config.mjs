@@ -12,6 +12,7 @@ const basePath = process.env.BASE_PATH;
 const rpcUrls_1 = process.env.EL_RPC_URLS_1?.split(',') ?? [];
 const rpcUrls_5 = process.env.EL_RPC_URLS_5?.split(',') ?? [];
 const rpcUrls_17000 = process.env.EL_RPC_URLS_17000?.split(',') ?? [];
+const rpcUrls_11503 = process.env.EL_RPC_URLS_11503?.split(',') ?? [];
 
 const ethAPIBasePath = process.env.ETH_API_BASE_PATH;
 
@@ -168,6 +169,7 @@ export default withBundleAnalyzer({
     rpcUrls_1,
     rpcUrls_5,
     rpcUrls_17000,
+    rpcUrls_11503,
     ethplorerApiKey,
     oneInchApiKey,
     cspTrustedHosts,

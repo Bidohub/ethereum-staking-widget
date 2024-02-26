@@ -31,8 +31,9 @@ export const useUnwrapTxProcessing = () => {
         const { maxFeePerGas, maxPriorityFeePerGas } =
           await getFeeData(staticRpcProvider);
         return wstethContractWeb3.unwrap(amount, {
-          maxPriorityFeePerGas: maxPriorityFeePerGas ?? undefined,
-          maxFeePerGas: maxFeePerGas ?? undefined,
+          // todo
+          // maxPriorityFeePerGas: maxPriorityFeePerGas ?? undefined,
+          // maxFeePerGas: maxFeePerGas ?? undefined,
         });
       }
     },
