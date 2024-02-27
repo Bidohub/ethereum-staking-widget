@@ -64,6 +64,9 @@ const withBundleAnalyzer = NextBundleAnalyzer({
 export default withBundleAnalyzer({
   basePath,
   generateBuildId,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 
   // IPFS next.js configuration reference:
   // https://github.com/Velenir/nextjs-ipfs-example

@@ -15,8 +15,9 @@ export type EnvConfigParsed = {
   supportedChainIds: number[];
   prefillUnsafeElRpcUrls: {
     [CHAINS.Mainnet]: string[];
-    [CHAINS.Goerli]: string[];
-    [CHAINS.Holesky]: string[];
+    [CHAINS.BEVM_TESTNET]: string[];
+    // [CHAINS.Goerli]: string[];
+    // [CHAINS.Holesky]: string[];
   };
   ipfsMode: boolean;
   walletconnectProjectId: string;

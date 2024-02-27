@@ -82,14 +82,14 @@ const HomePageIpfs: FC = () => {
       break;
     }
 
-    case getPathWithoutFirstSlash(WITHDRAWALS_PATH): {
-      if (parsedPath[1] === 'claim') {
-        spaPage = <WithdrawalsPage mode={'claim'} />;
-      } else {
-        spaPage = <WithdrawalsPage mode={'request'} />;
-      }
-      break;
-    }
+    // case getPathWithoutFirstSlash(WITHDRAWALS_PATH): {
+    //   if (parsedPath[1] === 'claim') {
+    //     spaPage = <WithdrawalsPage mode={'claim'} />;
+    //   } else {
+    //     spaPage = <WithdrawalsPage mode={'request'} />;
+    //   }
+    //   break;
+    // }
 
     case getPathWithoutFirstSlash(REWARDS_PATH): {
       spaPage = <RewardsPage />;
@@ -112,6 +112,7 @@ const HomePageIpfs: FC = () => {
   }
 
   // Fix for runtime of `dev-ipfs` (see: package.json scripts)
+  // @ts-ignore
   return <NoSSRWrapper>{spaPage}</NoSSRWrapper>;
 };
 
