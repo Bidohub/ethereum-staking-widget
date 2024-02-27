@@ -67,6 +67,7 @@ export default withBundleAnalyzer({
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
 
   // IPFS next.js configuration reference:
   // https://github.com/Velenir/nextjs-ipfs-example
