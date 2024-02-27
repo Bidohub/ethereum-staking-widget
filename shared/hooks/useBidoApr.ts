@@ -29,7 +29,11 @@ export const useBidoApr = () => {
   const { data: BTCReward } = useSwr(BEVM_RPC_URL, fetcher);
 
   useEffect(() => {
-    if (BTCReward && stethTotalSupply && stethTotalSupply.toNumber() > 0) {
+    if (
+      BTCReward &&
+      stethTotalSupply &&
+      Number(stethTotalSupply?.toString()) > 0
+    ) {
       setData(() => {
         const value = BigNumber.from(BTCReward).mul(365).div(stethTotalSupply);
         return value.mul(100).toString();

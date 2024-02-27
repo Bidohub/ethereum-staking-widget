@@ -5,12 +5,9 @@ import { Withdrawal } from 'features/withdrawal/withdrawal';
 
 const WithdrawalPage: FC = () => {
   return (
-    <Layout
-      title="Stake Ether"
-      subtitle="Stake ETH and receive stETH while staking."
-    >
+    <Layout title="Withdrawal BTC" subtitle="Withdrawal stBTC and receive BTC.">
       <Head>
-        <title>Stake with Lido | Lido</title>
+        <title>Stake with Bido | Bido</title>
       </Head>
       <Withdrawal />
     </Layout>

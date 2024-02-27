@@ -43,7 +43,7 @@ type SMA_APR_RESPONSE = {
     smaApr: number;
   };
   meta: {
-    symbol: 'stETH';
+    symbol: 'stBTC';
     address: string;
     chainId: CHAINS;
   };

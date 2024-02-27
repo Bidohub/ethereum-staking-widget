@@ -2148,15 +2148,15 @@
   dependencies:
     tiny-invariant "^1.1.0"
 
-"@lido-sdk/constants@npm:bido-sdk-constants@0.0.8", bido-sdk-constants@^0.0.8:
-  name "@lido-sdk/constants"
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/bido-sdk-constants/-/bido-sdk-constants-0.0.8.tgz#953a75c500c6a6a0ea3f1266a4726cf4c710b736"
-  integrity sha512-jwhrc72H7KLgqB15+PGpcrSKAb8DKs3ZTH3oWtzo5QztIF5qK97gaavUsBqWV0JH/OQapLDm4noJe8vscY91lg==
+"@lido-sdk/constants@npm:bido-sdk-constants@0.0.12", bido-sdk-constants@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.npmjs.org/bido-sdk-constants/-/bido-sdk-constants-0.0.12.tgz#9e60de3c532a8142515a72fbcd92ff78ab79b2cf"
+  integrity sha512-mZhcNFYe7SEHSKBbuwl4NiF16kGpUfUiAEm2ksleeikNmQtMMlbHQN41SOI1ANFL2502NdvCyWr1nv9JkJ48fQ==
   dependencies:
     tiny-invariant "^1.1.0"
 
 "@lido-sdk/contracts@npm:bido-sdk-contracts@0.0.6", bido-sdk-contracts@^0.0.6:
+  name "@lido-sdk/contracts"
   version "0.0.6"
   resolved "https://registry.npmjs.org/bido-sdk-contracts/-/bido-sdk-contracts-0.0.6.tgz#3f9ccb8f5034e07c2b54bd5e4df7b492e0db276e"
   integrity sha512-8MAiMTh8ngLHuM1C/TKFVtjPz+xvmYqKJDII46eIrGlBgfTGMZyqbMw8VWrRDXZmRKQSQmaFu6yCNMuA9Bx2QQ==
@@ -2188,11 +2188,10 @@
   dependencies:
     "@lido-sdk/constants" "3.2.1"
 
-"@lido-sdk/react@npm:bido-sdk-react@0.0.6", bido-sdk-react@^0.0.6:
-  name "@lido-sdk/react"
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/bido-sdk-react/-/bido-sdk-react-0.0.6.tgz#b0e6b967bf8912ecfcb3b7a26db9b66aa5974bf6"
-  integrity sha512-NG6eQU8FszVZg7+4jQLE4qRgPQHo/tJx4rkZF4CbalywTvUaElv3FP6BcFgWBT58WkIPbyqjBRvRC4gSXyWIfQ==
+"@lido-sdk/react@npm:bido-sdk-react@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/bido-sdk-react/-/bido-sdk-react-0.0.8.tgz#52ba2a3a3bd9636fa3715222042bbee32b1279f2"
+  integrity sha512-JoD+TkIYpQlIcB3109lHhMmnotJGyMk24bWaAnDnaOrLoydKw4chFKInBcwNI7j/pqBjpD6oSWte6S8Zbqym0g==
   dependencies:
     bido-sdk-constants "workspace:*"
     bido-sdk-contracts "workspace:*"

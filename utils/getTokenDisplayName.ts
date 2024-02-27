@@ -2,8 +2,8 @@ import { TOKENS } from '@lido-sdk/constants';
 
 export const TOKEN_DISPLAY_NAMES = {
   BTC: 'BTC',
-  [TOKENS.STBTC]: 'stETH',
-  [TOKENS.WSTBTC]: 'wstETH',
+  [TOKENS.STBTC]: 'stBTC',
+  [TOKENS.WSTBTC]: 'wstBTC',
 };
 
 export const getTokenDisplayName = (token: keyof typeof TOKEN_DISPLAY_NAMES) =>

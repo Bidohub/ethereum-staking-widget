@@ -32,7 +32,7 @@ export const SafeWorkWithLido: FC = () => {
         </li>
       </ul>
       <p>
-        Usually when staking ETH you choose only one validator. In the case of
+        Usually when staking BTC you choose only one validator. In the case of
         Lido you stake across many validators, minimising your staking risk.
       </p>
     </Accordion>

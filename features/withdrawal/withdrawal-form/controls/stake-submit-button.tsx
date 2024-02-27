@@ -1,5 +1,5 @@
 import { SubmitButtonHookForm } from 'shared/hook-form/controls/submit-button-hook-form';
-import { useStakeFormData } from '../stake-form-context';
+import { useStakeFormData } from '../withdrawal-form-context';
 import { LIMIT_LEVEL } from 'types';
 
 export const StakeSubmitButton = () => {
@@ -10,7 +10,7 @@ export const StakeSubmitButton = () => {
       data-testid="stakeSubmitBtn"
       errorField="amount"
     >
-      Stake
+      Withdrawal
     </SubmitButtonHookForm>
   );
 };

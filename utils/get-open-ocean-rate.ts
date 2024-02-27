@@ -30,7 +30,7 @@ type OpenOceanGetQuotePartial = {
   };
 };
 
-type RateToken = TOKENS.STBTC | TOKENS.WSTBTC | 'ETH';
+type RateToken = TOKENS.STBTC | TOKENS.WSTBTC | 'BTC';
 
 type RateCalculationResult = { rate: number; toReceive: BigNumber };
 
@@ -53,7 +53,7 @@ const calculateRateReceive = (
 };
 
 const getRateTokenAddress = (token: RateToken) =>
-  token === 'ETH'
+  token === 'BTC'
     ? '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
     : getTokenAddress(CHAINS.Mainnet, token);
 

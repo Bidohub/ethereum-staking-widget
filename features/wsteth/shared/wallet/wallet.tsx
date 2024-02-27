@@ -33,14 +33,14 @@ const WalletComponent: WalletComponentType = (props) => {
     <StyledCard data-testid="wrapCardSection" {...props}>
       <CardRow>
         <CardBalance
-          title="ETH Balance"
+          title="BTC Balance"
           loading={ethBalance.initialLoading}
           value={
             <FormatToken
               data-testid="ethBalance"
               showAmountTip
               amount={ethBalance.data}
-              symbol="ETH"
+              symbol="BTC"
             />
           }
         />

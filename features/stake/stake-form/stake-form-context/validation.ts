@@ -28,7 +28,7 @@ export const stakeFormValidationResolver: Resolver<
       'validation context must be presented as context promise',
     );
 
-    validateEtherAmount('amount', amount, 'ETH');
+    validateEtherAmount('amount', amount, 'BTC');
 
     // const {
     //   isWalletActive,

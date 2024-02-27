@@ -39,7 +39,7 @@ const STAKE_SWAP_INTEGRATION_CONFIG: StakeSwapDiscountIntegrationMap = {
   'one-inch': {
     title: '1inch',
     async getRate() {
-      const { rate } = await getOneInchRate({ token: 'ETH' });
+      const { rate } = await getOneInchRate({ token: 'BTC' });
       return rate;
     },
     BannerText({ discountPercent }) {

@@ -50,7 +50,7 @@ export const useSwapDiscount = () => {
       ...STRATEGY_LAZY,
       onError(error, key) {
         console.warn(
-          `[useSwapDiscount] Error fetching ETH->Steth:`,
+          `[useSwapDiscount] Error fetching BTC->StBTC:`,
           key,
           error,
         );

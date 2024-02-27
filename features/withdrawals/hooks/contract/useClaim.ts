@@ -37,7 +37,7 @@ export const useClaim = () => {
           type: 'start',
           operation: TX_OPERATION.CONTRACT,
           amount: ethToClaim,
-          token: 'ETH',
+          token: 'BTC',
         });
 
         const ids = sortedRequests.map((r) => r.id);

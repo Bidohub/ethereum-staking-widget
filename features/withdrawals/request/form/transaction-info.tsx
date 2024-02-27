@@ -60,10 +60,10 @@ export const TransactionInfo = () => {
       />
       {token === TOKENS.STBTC ? (
         <DataTableRow data-testid="exchangeRate" title="Exchange rate">
-          1 stETH = 1 ETH
+          1 stBTC = 1 BTC
         </DataTableRow>
       ) : (
-        <DataTableRowStethByWsteth toSymbol="ETH" />
+        <DataTableRowStethByWsteth toSymbol="BTC" />
       )}
     </>
   );

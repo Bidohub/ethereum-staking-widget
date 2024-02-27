@@ -10,10 +10,10 @@ const WrapPage: FC<WrapModePageProps> = ({ mode }) => {
   return (
     <Layout
       title="Wrap & Unwrap"
-      subtitle="Stable-balance stETH wrapper for DeFi"
+      subtitle="Stable-balance stBTC wrapper for DeFi"
     >
       <Head>
-        <title>Wrap | Lido</title>
+        <title>Wrap | Bido</title>
       </Head>
       <WrapUnwrapTabs mode={mode} key={key} />
     </Layout>

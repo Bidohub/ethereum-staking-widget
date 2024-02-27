@@ -35,7 +35,7 @@ export const Button: FC<ButtonProps> = (props) => {
           {initialLoading ? (
             <WalledButtonLoaderStyle />
           ) : (
-            <FormatToken amount={balance} symbol="ETH" />
+            <FormatToken amount={balance} symbol="BTC" />
           )}
         </WalledButtonBalanceStyle>
         <AddressBadge address={account} />

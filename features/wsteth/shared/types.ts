@@ -1,6 +1,5 @@
 import { TOKENS } from '@lido-sdk/constants';
 
-export const ETH = 'ETH';
 export const BTC = 'BTC';
 export const TOKENS_TO_WRAP = {
   BTC,

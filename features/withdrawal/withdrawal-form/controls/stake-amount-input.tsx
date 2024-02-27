@@ -1,6 +1,6 @@
 import { Eth } from '@lidofinance/lido-ui';
 import { TokenAmountInputHookForm } from 'shared/hook-form/controls/token-amount-input-hook-form';
-import { useStakeFormData } from '../stake-form-context';
+import { useStakeFormData } from '../withdrawal-form-context';
 import { useStakingLimitWarning } from 'shared/hooks/use-staking-limit-warning';
 
 export const StakeAmountInput = () => {

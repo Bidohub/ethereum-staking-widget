@@ -17,7 +17,7 @@ import type {
 } from './types';
 import { validateStakeEth } from 'shared/hook-form/validation/validate-stake-eth';
 
-export const stakeFormValidationResolver: Resolver<
+export const withdrawalFormValidationResolver: Resolver<
   StakeFormInput,
   Promise<StakeFormValidationContext>
 > = async (values, validationContextPromise) => {
@@ -28,7 +28,7 @@ export const stakeFormValidationResolver: Resolver<
       'validation context must be presented as context promise',
     );
 
-    validateEtherAmount('amount', amount, 'ETH');
+    validateEtherAmount('amount', amount, 'BTC');
 
     // const {
     //   isWalletActive,
@@ -65,7 +65,6 @@ export const stakeFormValidationResolver: Resolver<
       errors: {},
     };
   } catch (error) {
-    console.log('error----------', error);
     return handleResolverValidationError(error, 'StakeForm', 'referral');
   }
 };

@@ -5,7 +5,7 @@ import { dynamics } from 'config';
 import { prependBasePath } from './prependBasePath';
 
 type GetOneInchRateParams = {
-  token: TOKENS.STBTC | TOKENS.WSTBTC | 'ETH';
+  token: TOKENS.STBTC | TOKENS.WSTBTC | 'BTC';
   amount?: BigNumber;
 };
 

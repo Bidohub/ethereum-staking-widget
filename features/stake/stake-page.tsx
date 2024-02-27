@@ -8,11 +8,11 @@ export { Stake } from './stake';
 export const StakePage: FC = () => {
   return (
     <Layout
-      title="Stake Ether"
-      subtitle="Stake ETH and receive stETH while staking."
+      title="Stake BTC"
+      subtitle="Stake BTC and receive stBTC while staking."
     >
       <Head>
-        <title>Stake with Lido | Lido</title>
+        <title>Stake with Bido | Bido</title>
       </Head>
       <Stake />
     </Layout>

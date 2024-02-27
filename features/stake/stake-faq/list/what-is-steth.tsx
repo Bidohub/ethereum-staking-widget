@@ -3,11 +3,11 @@ import { Accordion } from '@lidofinance/lido-ui';
 
 export const WhatIsSteth: FC = () => {
   return (
-    <Accordion summary="What is stETH?">
+    <Accordion summary="What is stBTC?">
       <p>
-        stETH is a transferable rebasing utility token representing a share of
-        the total ETH staked through the protocol, which consists of user
-        deposits and staking rewards. Because stETH rebases daily, it
+        stBTC is a transferable rebasing utility token representing a share of
+        the total BTC staked through the protocol, which consists of user
+        deposits and staking rewards. Because stBTC rebases daily, it
         communicates the position of the share daily.
       </p>
     </Accordion>

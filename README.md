@@ -1,6 +1,6 @@
-# Lido Ethereum Liquid Staking Widget
+# Bido BEVM Liquid Staking Widget
 
-A widget for submitting Ether to the pool based on [Lido Frontend Template](https://github.com/lidofinance/lido-frontend-template).
+A widget for submitting Ether to the pool based on [Bido Frontend Template](https://github.com/Bidohub/ethereum-staking-widget).
 
 ### Pre-requisites
 

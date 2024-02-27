@@ -18,7 +18,7 @@ type DataTableRowStethByWstethProps = {
 };
 
 export const DataTableRowStethByWsteth = ({
-  toSymbol = 'stETH',
+  toSymbol = 'stBTC',
 }: DataTableRowStethByWstethProps) => {
   const { loading, wstethAsStethBN } = useWstethToStethRatio();
 
@@ -28,7 +28,7 @@ export const DataTableRowStethByWsteth = ({
       title="Exchange rate"
       loading={loading}
     >
-      1 wstETH =
+      1 wstBTC =
       <FormatToken
         data-testid="destinationRate"
         amount={wstethAsStethBN}

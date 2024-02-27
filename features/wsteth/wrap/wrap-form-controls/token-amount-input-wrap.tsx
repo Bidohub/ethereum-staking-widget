@@ -21,7 +21,7 @@ export const TokenAmountInputWrap = () => {
       data-testid="wrapInput"
       isLocked={isApprovalNeededBeforeWrap}
       maxValue={maxAmount}
-      warning={token === 'ETH' ? limitWarning : null}
+      warning={token === 'BTC' ? limitWarning : null}
       showErrorMessage={false}
     />
   );

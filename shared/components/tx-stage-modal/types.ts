@@ -3,6 +3,7 @@ export enum TX_OPERATION {
   APPROVING,
   WRAPPING,
   UNWRAPPING,
+  WITHDRAWAL,
 }
 
 export enum TX_STAGE {

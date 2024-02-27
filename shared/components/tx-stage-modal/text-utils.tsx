@@ -39,6 +39,8 @@ export const getOperationProcessingDisplayText = (operation: TX_OPERATION) => {
       return 'Wrapping';
     case TX_OPERATION.UNWRAPPING:
       return 'Unwrapping';
+    case TX_OPERATION.WITHDRAWAL:
+      return 'Withdrawal';
     default:
       return 'Processing';
   }

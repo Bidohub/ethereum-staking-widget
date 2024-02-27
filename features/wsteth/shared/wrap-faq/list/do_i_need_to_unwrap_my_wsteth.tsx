@@ -8,9 +8,9 @@ import { LocalLink } from 'shared/components/local-link';
 
 export const DoINeedToUnwrapMyWsteth: FC = () => {
   return (
-    <Accordion summary="Do I need to unwrap my wstETH before requesting withdrawals?">
+    <Accordion summary="Do I need to unwrap my wstBTC before requesting withdrawals?">
       <p>
-        No, you can transform your wstETH to ETH using the{' '}
+        No, you can transform your wstBTC to BTC using the{' '}
         <LocalLink
           href={WITHDRAWALS_REQUEST_PATH}
           onClick={() =>

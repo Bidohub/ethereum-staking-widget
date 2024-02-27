@@ -40,7 +40,7 @@ export const RequestItem = forwardRef<HTMLInputElement, RequestItemProps>(
     const amountValue = isClaimable
       ? status.claimableEth
       : status.amountOfStETH;
-    const symbol = isClaimable ? 'ETH' : 'stETH';
+    const symbol = isClaimable ? 'BTC' : 'stBTC';
 
     const label = (
       <FormatToken

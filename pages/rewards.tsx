@@ -10,15 +10,15 @@ const Rewards: FC = () => {
   return (
     <Layout
       title="Reward History"
-      subtitle="Track your Ethereum staking rewards with Lido."
+      subtitle="Track your Ethereum staking rewards with Bido."
       containerSize="content"
     >
       <Head>
-        <title>Track your Ethereum staking rewards | Lido</title>
+        <title>Track your BEVM staking rewards | Bido</title>
         <meta
           name="description"
-          content="Keep track of your daily Ethereum staking rewards using our stETH
-        reward tracker. View stETH balances, historical rewards and transfers."
+          content="Keep track of your daily BEVM staking rewards using our stBTC
+        reward tracker. View stBTC balances, historical rewards and transfers."
         />
       </Head>
       <RewardsHistoryProvider>

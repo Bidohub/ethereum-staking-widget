@@ -6,7 +6,7 @@ type CurveResponseMeta = {
       address: string;
     };
     tokens: {
-      symbol: 'ETH' | 'stETH';
+      symbol: 'BTC' | 'stBTC';
       address: string;
     }[];
   };

@@ -8,7 +8,7 @@ export const LidoEthApr: FC = () => {
       <p>Lido staking APR for Ethereum = Protocol APR * (1 - Protocol fee)</p>
       <p>
         Protocol APR — the overall Consensus Layer (CL) and Execution Layer (EL)
-        rewards received by Lido validators to total pooled ETH estimated as the
+        rewards received by Lido validators to total pooled BTC estimated as the
         moving average of the last seven days.
       </p>
       <p>
@@ -16,7 +16,7 @@ export const LidoEthApr: FC = () => {
         between node operators and the DAO Treasury.
       </p>
       <p>
-        More about Lido staking APR for Ethereum you could find on the{' '}
+        More about Lido staking APR for BEVM you could find on the{' '}
         <Link
           href={'https://lido.fi/ethereum'}
           data-matomo={MATOMO_CLICK_EVENTS_TYPES.faqLidoEthAprEthLandingPage}

@@ -7,7 +7,7 @@ import { FormatPrice, FormatToken } from 'shared/formatters';
 import { STRATEGY_CONSTANT } from 'utils/swrStrategies';
 import { DATA_UNAVAILABLE } from 'config';
 
-import { StakeFormInput, useStakeFormData } from './stake-form-context';
+import { StakeFormInput, useStakeFormData } from './withdrawal-form-context';
 
 import { useEthUsd } from 'shared/hooks/use-eth-usd';
 
@@ -27,7 +27,7 @@ export const WithdrawalFormInfo = () => {
       <DataTableRow title="You will receive" data-testid="youWillReceive">
         <FormatToken
           amount={amount ?? Zero}
-          symbol="stETH"
+          symbol="stBTC"
           showAmountTip
           trimEllipsis
         />
@@ -35,13 +35,13 @@ export const WithdrawalFormInfo = () => {
       <DataTableRow title="Exchange rate" data-testid="exchangeRate">
         1 BTC = 1 stBTC
       </DataTableRow>
-      <DataTableRow
-        title="Max transaction cost"
-        data-testid="maxTxCost"
-        loading={!txCostInUsd}
-      >
-        <FormatPrice amount={txCostInUsd} />
-      </DataTableRow>
+      {/*<DataTableRow*/}
+      {/*  title="Max transaction cost"*/}
+      {/*  data-testid="maxTxCost"*/}
+      {/*  loading={!txCostInUsd}*/}
+      {/*>*/}
+      {/*  <FormatPrice amount={txCostInUsd} />*/}
+      {/*</DataTableRow>*/}
       {/*<DataTableRow*/}
       {/*  title="Reward fee"*/}
       {/*  data-testid="lidoFee"*/}

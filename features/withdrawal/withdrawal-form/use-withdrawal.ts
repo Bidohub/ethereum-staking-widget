@@ -23,7 +23,7 @@ type StakeOptions = {
   onConfirm?: () => Promise<void> | void;
 };
 
-export const useStake = ({ onConfirm }: StakeOptions) => {
+export const useWithdrawal = ({ onConfirm }: StakeOptions) => {
   const stethContractWeb3 = useSTETHContractWeb3();
   const { account, chainId } = useWeb3();
   const { staticRpcProvider } = useCurrentStaticRpcProvider();
@@ -41,7 +41,7 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
         dispatchModalState({
           type: 'start',
           operation: TX_OPERATION.CONTRACT,
-          token: 'ETH',
+          token: 'BTC',
           amount,
         });
 
@@ -66,32 +66,27 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
 
         const callback = async () => {
           if (isMultisig) {
-            const tx = await stethContractWeb3.populateTransaction.submit(
-              referralAddress,
-              {
-                value: amount,
-              },
+            const tx = await stethContractWeb3.populateTransaction.unstake(
+              amount,
+              {},
             );
             return providerWeb3.getSigner().sendUncheckedTransaction(tx);
           } else {
             const { maxFeePerGas, maxPriorityFeePerGas } =
               await getFeeData(staticRpcProvider);
             const overrides = {
-              value: amount,
-              //todo
+              // value: amount,
+              // todo
               // maxPriorityFeePerGas,
               // maxFeePerGas,
             };
-            console.log('overrides', overrides);
 
-            const originalGasLimit = await stethContractWeb3.estimateGas.stake(
-              referralAddress,
-              overrides,
-            );
+            const originalGasLimit =
+              await stethContractWeb3.estimateGas.unstake(amount, overrides);
 
             const gasLimit = applyGasLimitRatio(originalGasLimit);
 
-            return stethContractWeb3.stake(referralAddress, {
+            return stethContractWeb3.unstake(amount, {
               ...overrides,
               gasLimit,
             });
@@ -99,7 +94,7 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
         };
 
         const transaction = await runWithTransactionLogger(
-          'Stake signing',
+          'Unstake signing',
           callback,
         );
 

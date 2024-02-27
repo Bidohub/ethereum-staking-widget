@@ -35,7 +35,7 @@ interface TxStageModalProps extends ModalProps {
   willReceiveAmountToken?: string;
   txHash?: string | null;
   balance?: BigNumber;
-  balanceToken?: 'stBTC' | 'wstBTC';
+  balanceToken?: 'stBTC' | 'wstBTC' | 'BTC';
   allowanceAmount?: BigNumber;
   failedText?: string | null;
   onRetry: React.MouseEventHandler;
@@ -182,7 +182,7 @@ export const TxStageModal = memo((props: TxStageModalProps) => {
           description={`${formatBalance(
             allowanceAmount,
             4,
-          )} stETH was unlocked to wrap.`}
+          )} stBTC was unlocked to wrap.`}
           footerHint={<TxLinkEtherscan txHash={txHash} />}
         />
       );
@@ -204,7 +204,7 @@ export const TxStageModal = memo((props: TxStageModalProps) => {
           </>
         }
         description={successText}
-        footer={<L2LowFee token={balanceToken || 'stETH'} />}
+        // footer={<L2LowFee token={balanceToken || 'stBTC'} />}
       />
     );
   }

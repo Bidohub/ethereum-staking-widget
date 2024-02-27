@@ -39,13 +39,13 @@ export const TxClaimModal = () => {
     );
 
     const successDescription = 'Claiming operation was successful';
-    const successTitle = <>{amountEl} ETH has been claimed</>;
+    const successTitle = <>{amountEl} BTC has been claimed</>;
 
     const pendingDescription = 'Awaiting block confirmation';
-    const pendingTitle = <>You are now claiming {amountEl} ETH</>;
+    const pendingTitle = <>You are now claiming {amountEl} BTC</>;
 
     const signDescription = 'Processing your request';
-    const signTitle = <>You are now claiming {amountEl} ETH</>;
+    const signTitle = <>You are now claiming {amountEl} BTC</>;
 
     switch (txStage) {
       case TX_STAGE.SIGN:

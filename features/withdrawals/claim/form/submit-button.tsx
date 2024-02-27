@@ -17,7 +17,7 @@ export const SubmitButton = () => {
   if (!active) return <Connect fullwidth />;
 
   const claimButtonAmount = ethToClaim.lte(Zero) ? null : (
-    <FormatToken amount={ethToClaim} symbol="ETH" />
+    <FormatToken amount={ethToClaim} symbol="BTC" />
   );
 
   const disabled =

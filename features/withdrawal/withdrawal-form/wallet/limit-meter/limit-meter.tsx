@@ -1,5 +1,5 @@
 import { LimitHelp } from './components';
-import { useStakeFormData } from '../../stake-form-context';
+import { useStakeFormData } from '../../withdrawal-form-context';
 
 export const LimitMeter = () => {
   const { stakingLimitInfo } = useStakeFormData();

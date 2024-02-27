@@ -24,10 +24,10 @@ import { STRATEGY_LAZY } from 'utils/swrStrategies';
 
 import { useStethSubmitGasLimit } from '../hooks';
 import {
-  stakeFormValidationResolver,
+  withdrawalFormValidationResolver,
   useStakeFormValidationContext,
 } from './validation';
-import { useStake } from '../use-stake';
+import { useWithdrawal } from '../use-withdrawal';
 import {
   type StakeFormDataContextValue,
   type StakeFormInput,
@@ -52,7 +52,7 @@ export const useStakeFormData = () => {
   return value;
 };
 
-const useStakeFormNetworkData = (): StakeFormNetworkData => {
+const useWithdrawalFormNetworkData = (): StakeFormNetworkData => {
   const { data: stethBalance, update: updateStethBalance } =
     useSTETHBalance(STRATEGY_LAZY);
   const { isMultisig, isLoading: isMultisigLoading } = useIsMultisig();
@@ -123,7 +123,7 @@ const useStakeFormNetworkData = (): StakeFormNetworkData => {
 //
 export const WithdrawalFormProvider: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
-  const networkData = useStakeFormNetworkData();
+  const networkData = useWithdrawalFormNetworkData();
   const validationContextPromise = useStakeFormValidationContext(networkData);
 
   const formObject = useForm<StakeFormInput>({
@@ -132,7 +132,7 @@ export const WithdrawalFormProvider: FC<PropsWithChildren> = ({ children }) => {
       referral: null,
     },
     context: validationContextPromise,
-    resolver: stakeFormValidationResolver,
+    resolver: withdrawalFormValidationResolver,
     mode: 'onChange',
   });
   const { setValue } = formObject;
@@ -156,7 +156,7 @@ export const WithdrawalFormProvider: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [router, setValue]);
 
-  const stake = useStake({ onConfirm: networkData.revalidate });
+  const stake = useWithdrawal({ onConfirm: networkData.revalidate });
 
   const formControllerValue: FormControllerContextValueType<StakeFormInput> =
     useMemo(() => ({ onSubmit: stake }), [stake]);

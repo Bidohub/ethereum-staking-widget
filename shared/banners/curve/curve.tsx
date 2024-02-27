@@ -42,7 +42,7 @@ export const Curve: FC = () => {
     >
       <b>{value}% APR</b>
       <br />
-      ETH + stETH
+      BTC + stBTC
     </Banner>
   );
 };

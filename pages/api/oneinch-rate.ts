@@ -31,15 +31,17 @@ type OneInchRateResponse = {
   toReceive: string;
 };
 
+const TOKEN_ETH = 'BTC';
+
 const cache = new Cache<string, OneInchRateResponse>();
 
 const DEFAULT_AMOUNT = parseEther('1');
-const TOKEN_ETH = 'ETH';
+
 // Amounts larger make 1inch API return 500
 const MAX_BIGINT = BigNumber.from(
   '10000000000000000000000000000000000000000000000000000000000000000000',
 );
-const TOKEN_ALLOWED_LIST = [TOKEN_ETH, TOKENS.STBTC, TOKENS.WSTBTC];
+const TOKEN_ALLOWED_LIST = ['BTC', TOKENS.STBTC, TOKENS.WSTBTC];
 const ETH_DUMMY_ADDRESS = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
 const PASSTHROUGH_CODES = [400, 422, 429];
 
@@ -58,7 +60,7 @@ const validateAndParseParams = (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     if (req.query.amount) {
-      if (token === 'ETH') {
+      if (token === 'BTC') {
         throw new Error(`Amount is not allowed to token ETH`);
       }
       if (Array.isArray(req.query.amount)) {

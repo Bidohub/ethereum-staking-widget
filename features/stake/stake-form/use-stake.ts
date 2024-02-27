@@ -41,7 +41,7 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
         dispatchModalState({
           type: 'start',
           operation: TX_OPERATION.CONTRACT,
-          token: 'ETH',
+          token: 'BTC',
           amount,
         });
 
@@ -66,7 +66,7 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
 
         const callback = async () => {
           if (isMultisig) {
-            const tx = await stethContractWeb3.populateTransaction.submit(
+            const tx = await stethContractWeb3.populateTransaction.stake(
               referralAddress,
               {
                 value: amount,
@@ -82,7 +82,6 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
               // maxPriorityFeePerGas,
               // maxFeePerGas,
             };
-            console.log('overrides', overrides);
 
             const originalGasLimit = await stethContractWeb3.estimateGas.stake(
               referralAddress,
@@ -121,7 +120,6 @@ export const useStake = ({ onConfirm }: StakeOptions) => {
 
         return true;
       } catch (error) {
-        console.log('stake error', error);
         dispatchModalState({
           type: 'error',
           errorText: getErrorMessage(error),

@@ -21,7 +21,7 @@ export const ModalPoolBanners = () => {
       <TextStyles>
         <b>Explore DeFi</b>
         <DescStyles>
-          Use your stETH/wstETH to get even bigger rewards
+          Use your stBTC/wstBTC to get even bigger rewards
         </DescStyles>
       </TextStyles>
       <Curve />

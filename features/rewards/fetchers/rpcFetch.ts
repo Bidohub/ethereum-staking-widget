@@ -22,7 +22,7 @@ const CURVE_ABI = [
 ];
 
 const TOKENS = {
-  ETH: 'ETH',
+  BTC: 'BTC',
   STETH: 'stETH',
   WSTETH: 'wstETH',
   CURVE: 'curve',

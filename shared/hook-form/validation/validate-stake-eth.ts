@@ -35,7 +35,7 @@ export const validateStakeEth = ({
       formField,
       amount,
       etherBalance,
-      `Entered ETH amount exceeds your available balance of ${formatEther(
+      `Entered BTC amount exceeds your available balance of ${formatEther(
         etherBalance,
       )}`,
     );
@@ -44,7 +44,7 @@ export const validateStakeEth = ({
       formField,
       amount,
       currentStakeLimit,
-      `Entered ETH amount exceeds current staking limit of ${formatEther(
+      `Entered BTC amount exceeds current staking limit of ${formatEther(
         currentStakeLimit,
       )}`,
     );
@@ -56,7 +56,7 @@ export const validateStakeEth = ({
         formField,
         Zero,
         gasPaddedBalance,
-        `Ensure you have sufficient ETH to cover the gas cost of ${formatEther(
+        `Ensure you have sufficient BTC to cover the gas cost of ${formatEther(
           gasCost,
         )}`,
       );
@@ -65,9 +65,9 @@ export const validateStakeEth = ({
         formField,
         amount,
         gasPaddedBalance,
-        `Enter ETH amount less than ${formatEther(
+        `Enter BTC amount less than ${formatEther(
           gasPaddedBalance,
-        )} to ensure you leave enough ETH for gas fees`,
+        )} to ensure you leave enough BTC for gas fees`,
       );
     }
   }

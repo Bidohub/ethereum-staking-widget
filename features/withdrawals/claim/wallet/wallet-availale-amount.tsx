@@ -9,7 +9,7 @@ export const WalletAvailableAmount = () => {
     <FormatToken
       showAmountTip
       amount={data?.claimableAmountOfETH}
-      symbol="ETH"
+      symbol="BTC"
     />
   );
 

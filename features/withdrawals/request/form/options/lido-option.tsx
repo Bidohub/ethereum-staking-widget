@@ -29,7 +29,7 @@ const TooltipWithdrawalAmount = () => {
       placement="topRight"
       title={
         <>
-          The final amount of claimable ETH can differ
+          The final amount of claimable BTC can differ
           <OnlyInfraRender>
             <br /> For more info, please read{' '}
             <a
@@ -76,7 +76,7 @@ export const LidoOption = () => {
               data-testid="lidoOptionAmount"
               showAmountTip
               amount={ethAmount}
-              symbol="ETH"
+              symbol="BTC"
             />{' '}
             <TooltipWithdrawalAmount />
           </>

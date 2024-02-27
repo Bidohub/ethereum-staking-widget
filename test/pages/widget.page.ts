@@ -14,7 +14,7 @@ export class WidgetPage {
       hasText: 'Connect wallet',
     });
     this.lidoStatistic = this.page.locator('section', {
-      hasText: 'Lido statistic',
+      hasText: 'Bido statistic',
     });
   }
 

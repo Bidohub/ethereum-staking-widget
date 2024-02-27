@@ -27,17 +27,15 @@ const routes = [
     icon: <Wrap data-testid="navWrap" />,
   },
   {
-    name: 'Withdrawals',
+    name: 'Withdrawal',
     path: WITHDRAWALS_REQUEST_PATH,
-    full_path: WITHDRAWALS_REQUEST_PATH,
-    subPaths: [WITHDRAWALS_CLAIM_PATH],
     icon: <Withdraw data-testid="navWithdrawals" />,
   },
-  {
-    name: 'Rewards',
-    path: REWARDS_PATH,
-    icon: <Wallet data-testid="navRewards" />,
-  },
+  // {
+  //   name: 'Rewards',
+  //   path: REWARDS_PATH,
+  //   icon: <Wallet data-testid="navRewards" />,
+  // },
 ];
 export const Navigation: FC = memo(() => {
   const pathname = useRouterPath();

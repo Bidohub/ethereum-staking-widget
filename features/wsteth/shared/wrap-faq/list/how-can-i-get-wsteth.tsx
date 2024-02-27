@@ -8,9 +8,9 @@ import { LocalLink } from 'shared/components/local-link';
 
 export const HowCanIGetWsteth: FC = () => {
   return (
-    <Accordion summary="How can I get wstETH?">
+    <Accordion summary="How can I get wstBTC?">
       <p>
-        You can wrap your stETH or ETH tokens using{' '}
+        You can wrap your stBTC or BTC tokens using{' '}
         <LocalLink
           href={WRAP_PATH}
           onClick={() =>

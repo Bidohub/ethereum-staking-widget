@@ -11,7 +11,7 @@ export type AllowanceDataTableRowProps = Omit<
   'title'
 > & {
   title?: ReactNode;
-  token: TOKENS.WSTBTC | TOKENS.STBTC | 'ETH';
+  token: TOKENS.WSTBTC | TOKENS.STBTC | 'BTC';
   allowance?: BigNumber;
   isBlank?: boolean;
 };

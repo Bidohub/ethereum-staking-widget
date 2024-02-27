@@ -6,9 +6,9 @@ import { LocalLink } from 'shared/components/local-link';
 
 export const ConvertSTETHtoETH: FC = () => {
   return (
-    <Accordion summary="Can I transform my stETH to ETH?">
+    <Accordion summary="Can I transform my stBTC to BTC?">
       <p>
-        Yes. Stakers can transform their stETH to ETH 1:1 using the{' '}
+        Yes. Stakers can transform their stBTC to BTC 1:1 using the{' '}
         <LocalLink href={WITHDRAWALS_REQUEST_PATH}>Request</LocalLink> and{' '}
         <LocalLink href={WITHDRAWALS_CLAIM_PATH}>Claim</LocalLink> tabs.
       </p>

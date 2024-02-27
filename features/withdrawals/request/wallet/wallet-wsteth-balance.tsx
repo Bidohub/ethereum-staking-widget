@@ -21,7 +21,7 @@ export const WalletWstethBalance = () => {
         <FormatToken
           data-testid="wstEthBalanceOption"
           amount={stethByWstethBalance}
-          symbol="ETH"
+          symbol="BTC"
         />
       </Text>
     </>

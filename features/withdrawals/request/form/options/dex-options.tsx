@@ -55,7 +55,7 @@ const DexOption: React.FC<DexOptionProps> = ({
             approx
             showAmountTip
             amount={toReceive ?? BigNumber.from(0)}
-            symbol="ETH"
+            symbol="BTC"
           />
         ) : (
           '-'
