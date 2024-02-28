@@ -63,4 +63,4 @@ const AppWrapper = (props: AppProps): JSX.Element => {
 
 export default dynamics.ipfsMode || process.env.NODE_ENV === 'development'
   ? AppWrapper
-  : withCsp(AppWrapper);
+  : AppWrapper;
